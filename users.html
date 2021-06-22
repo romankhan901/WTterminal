@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+                <script src="jquery-3.4.1.min.js"></script>
+                <script src="popper.min.js"></script>
+                <script src="bootstrap.min.js"></script>
+                <script src="jqcrud.js"></script>
+                <link rel="stylesheet" href="bootstrap.min.css" />
+                <link rel="stylesheet" href="jqstyles.css" />
+    </head>
+    <body class="container">
+        
+            <h1>User API Client</h1>
+
+        
+        <button
+                type="button"
+                class="btn btn-primary btn-lg"
+                data-toggle="modal"
+                data-target="#addModal"
+            >
+            Add The User
+        </button>
+
+       
+        <div
+            class="modal fade"
+            id="addModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="modelNameId"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New User to the list </h5>
+                        <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                        >
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+            </div>
+                    
+            <div class="modal-body">
+                        <div class="form-group">
+                            <label for="title">Full Name</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="title"
+                                    id="title"
+                                    aria-describedby="nameHelp"
+                                    placeholder="Please Enter the complete Name of User"
+                            />
+                            <small id="nameHelp" class="form-text text-muted"
+                                >Enter User Name </small
+                            >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="body">Email Address </label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                name="body"
+                                id="body"
+                                aria-describedby="emailHelp"
+                                placeholder="Please Enter User Email Address"
+                            />
+                            <small id="emailHelp" class="form-text text-muted"
+                                > Enter User Email Address </small
+                            >
+                        </div>
+                </div>
+                    <div class="modal-footer">
+                        <button id="addBtn" class="btn btn-info">
+                                Add The User
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="users">Loading ...</div>
+
+        <div
+            class="modal fade"
+            id="updateModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="modelNameId"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Update The User Record</h5>
+                        <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                        >
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="updateId" /> <br />
+                        <div class="form-group">
+                            <label for="updateName">User Name</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="updateName"
+                                id="updateName"
+                                placeholder=""
+                                disabled
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="updateEmail"> User Email Address</label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                name="updateEmail"
+                                id="updateEmail"
+                                aria-describedby="updateHelpId"
+                                placeholder="Enter Email here"
+                            />
+                            <small
+                                id="updateHelpId"
+                                class="form-text text-muted"
+                                >Enter Email to Update</small
+                            >
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="updateSave" class="btn btn-primary">
+                            Update
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
